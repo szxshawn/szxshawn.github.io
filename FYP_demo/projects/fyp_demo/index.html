@@ -109,12 +109,21 @@
                         </tr>
                     </tbody>
                 </table>
-                <h1 class="section-name">&#128400; Controllable Dehazing</h1>
+                <h1 class="section-name">&#128400; Night Images Artifacts Removal</h1>
                 <p class="section-content-text">
-                Our RIDCP allows users to adjust the enhancement degeree.
-                The novel <strong> Contorllable HQPs Matching </strong> mechanism can control the matching trends of HQPs.
+                Our model can also remove the artifacts from Night-time images, but the performance is 
+                not that good due to the lack of night-time traing images.
+                <!-- The novel <strong> Contorllable HQPs Matching </strong> mechanism can control the matching trends of HQPs. -->
                 </p>
-                <table style="border: 0px black solid;">
+                <table style="border: 0px black solid; border-top: 0;">
+                    <tbody>
+                        <tr>
+                            <td style="padding: 10px; width:510; text-align: left;"><iframe frameborder="0" class="juxtapose" height="390" width="480" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=446b1580-f41c-11ee-9e97-9dade61bb597"></iframe></td>
+                            <td style="padding: 10px; width:510; text-align: right;"><iframe frameborder="0" class="juxtapose" height="390" width="480" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=5f239e2e-f41c-11ee-9e97-9dade61bb597"></iframe></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- <table style="border: 0px black solid;">
                     <tbody>
                         <tr>
                             <td style="width: 480px;text-align: left; padding-bottom: 5px;">
@@ -133,7 +142,7 @@
                             </td>
                         </tr>
                     </tbody>
-                </table>
+                </table> -->
                 <input id='slider' type="range" min="0" max="240" value="160" step="1" />
             </div>
         </div>
