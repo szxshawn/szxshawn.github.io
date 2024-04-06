@@ -173,11 +173,16 @@
                 <h1 class="section-name">Method</h1>
                 <img src="method.png" width="1000"/>
                 <p class="section-content-text">
-                    Overview of our RIDCP. 
-    During the training phase, we train the dehazing network on the data synthesized by our data generation pipeline, as illustrated in (a).
-    The network is based on the pre-trained HQPs codebook and the corresponding decoder $\mathbf{G}_{vq}$ of VQGAN.
-    We also design the Controllable HQPs Matching (CHM) operation for real domain adaptation by re-calculating the distance $d^{\hat{z}}_{k}=||\hat{z}-z_k||$ between features and HQPs.
-    (b) represents the distance re-calculation with two Voronoi diagrams, where the colored cells indicate belonging to better HQPs and the gray cells vice versa. Triangles represent features and star points represent HQPs. It can be seen that after the distance recalculation points that originally belonged to the gray cells are forced to be assigned to the colored cells by our CHM.
+                    Overview of our Model. 
+                    In this architecture, we developed two
+                    modules named Flare Inpainting Module(FIM) and Mixture Artifacts Optimizer Module(MAOM)
+                    respectively. FIM applies the Contextual Attention Module to mainly focus on inpainting areas damaged by
+                    the flare artifacts. MAOM consists of a special residual block containing SFTLayer and CBAM, which are
+                    used to refine the image reconstruction (SFT) of the flare-affected region and enhance the network's focus
+                    on useful features through spatial and channel attention mechanisms, respectively, to effectively remove
+                    artifacts present in the image. These two modules work together and significantly improve the model's
+                    ability to remove artifacts no matter there is only scratch-related artifacts or scratch-related artifacts and
+                    flare artifacts come out together.
                 </p>
             </div>
 
