@@ -152,7 +152,20 @@
             <div class="section-content">
             <h1 class="section-name"> Abstract </h1>
                 <p class="section-content-text">
-                    Existing dehazing approaches struggle to process real-world hazy images owing to the lack of paired real data and robust priors. In this work, we present a new paradigm for real image dehazing from the perspectives of synthesizing more realistic hazy data and introducing more robust priors into the network. Specifically, (1) instead of adopting the de facto physical scattering model, we rethink the degradation of real hazy images and propose a phenomenological pipeline considering diverse degradation types. (2) We propose a Real Image Dehazing network via high-quality Codebook Priors (RIDCP). Firstly, a VQGAN is pre-trained on a large-scale high-quality dataset to obtain the discrete codebook, encapsulating high-quality priors (HQPs). After replacing the negative effects brought by haze with HQPs, the decoder equipped with a novel normalized feature alignment module can effectively utilize high-quality features and produce clean results. However, although our degradation pipeline drastically mitigates the domain gap between synthetic and real data, it is still intractable to avoid it, which challenges HQPs matching in the wild. Thus, we re-calculate the distance when matching the features to the HQPs by a controllable matching operation, which facilitates finding better counterparts. We provide a recommendation to control the matching based on an explainable solution. Users can also flexibly adjust the enhancement degree as per their preference. Extensive experiments verify the effectiveness of our data synthesis pipeline and the superior performance of RIDCP in real image dehazing. 
+                    A lens protector is a component that is fixed to the front of the phone camera to prevent the phone's lens
+                    from being damaged. Although this protector can effectively protect the mobile phone camera, but these
+                    protectors are very fragile, it is easy to scratch and leave scratches, especially for those low-cost mobile
+                    phones, because their lens protectors are basically made of plastic, so it is easy to be damaged. These
+                    scratches on the protector will cause artifacts to appear in the photo taken, which will affect the quality of
+                    the photo. Effective removal of fuzzy artifacts from photographs is an important challenge today, and while
+                    several methods have proposed some measures to address these artifacts, most of them do not consider the
+                    consequences of the interaction between flares and artifacts when they co-exist. Therefore, in my Final Year
+                    Project, we propose a framework to consider the simultaneous presence of flares and artifacts when the lens
+                    protector is destroyed, and effectively remove them. One part of the framework focuses on distinguishing
+                    between flares and other artifacts, and the other part considers flares and other artifacts together and
+                    effectively eliminates them. At the same time, in order to get closer to the real world situation, we looked for
+                    real shot datasets and added images token by myself. Experiments show that this framework performs better
+                    than other existing baseline methods.
                 </p>
             </div>
 
