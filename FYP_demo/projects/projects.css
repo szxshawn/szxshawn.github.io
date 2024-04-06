@@ -46,13 +46,14 @@ name {
 #author-list{
     margin-top: 10px;
     margin-bottom: 10px;
-    font-size: 18px;
+    font-size: 40px;
     color: #1772d0;
 }
 
 #institution-list{
     color: #4a4a4a;
     margin-bottom: 10px;
+    font-size: 25px;
 }
 
 #publication{
