@@ -65,7 +65,7 @@ scholar: ''
 
 ## 首页配图
 
-首页使用实景照片，来源为 Kindel Media 和 Pavel Danilyuk / Pexels，仅作为研究方向的主题配图。摄影来源与许可见 `assets/photo-sources.json`。后续可替换 `assets/photos/research-electric-vehicle.jpg` 和 `assets/photos/research-robotics.jpg`；同名上传即可，页面自动适配裁切。
+首页使用一张定制生成的研究场景示意图：搭载感知传感器的智能电动车辆，与带视觉相机的移动机械臂。图片采用自然光和中性灰蓝色调，用于表达“智能电动车辆 × 具身智能”，并非课题组实验室或设备的实拍。页面使用 `assets/photos/research-lab-concept.jpg`，完整显示 4:3 画面；同名上传可替换，推荐保持相同比例。生成工具与完整提示词见 `assets/generated-image.json`。旧 Pexels 图片仅作备份，来源保留在 `assets/photo-sources.json`。
 
 
 ## 时空背景
