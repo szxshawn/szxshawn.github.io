@@ -50,3 +50,7 @@ scholar: ''           // https:// 开头的学术主页
 年份留空时显示“入学年份待补充”。链接留空时不显示图标，填入有效地址后自动出现对应入口。`interest` 可填写中英文研究主题，也可留空以隐藏。使用头像时建议将人脸放在照片中心偏上位置。
 
 布局参考 [PRLab 学生页面](https://prlab-nju.com/nju/people/) 的圆形头像、分组与居中信息结构；未使用对方的人员资料或照片。
+
+## 首页配图
+
+首页使用实景照片，来源为 Kindel Media 和 Pavel Danilyuk / Pexels，仅作为研究方向的主题配图。摄影来源与许可见 `assets/photo-sources.json`。后续可替换 `assets/photos/research-electric-vehicle.jpg` 和 `assets/photos/research-robotics.jpg`；同名上传即可，页面自动适配裁切。

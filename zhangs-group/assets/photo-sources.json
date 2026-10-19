@@ -1,0 +1,22 @@
+{
+  "purpose": "Stock photographs illustrating research themes; these are not photographs of the group's own facilities or equipment.",
+  "license": "Pexels License",
+  "licenseUrl": "https://www.pexels.com/license/",
+  "retrievedOn": "2026-10-20",
+  "photos": [
+    {
+      "file": "photos/research-electric-vehicle.jpg",
+      "photographer": "Kindel Media",
+      "title": "White Electric Car Charging",
+      "source": "https://www.pexels.com/photo/white-electric-car-charging-9800024/",
+      "download": "https://images.pexels.com/photos/9800024/pexels-photo-9800024.jpeg?auto=compress&cs=tinysrgb&w=1000&q=82"
+    },
+    {
+      "file": "photos/research-robotics.jpg",
+      "photographer": "Pavel Danilyuk",
+      "title": "Close-up Photo of an Articulated Robot",
+      "source": "https://www.pexels.com/photo/close-up-photo-of-an-articulated-robot-8438863/",
+      "download": "https://images.pexels.com/photos/8438863/pexels-photo-8438863.jpeg?auto=compress&cs=tinysrgb&w=700&q=82"
+    }
+  ]
+}
