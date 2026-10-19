@@ -2,7 +2,6 @@
   'use strict';
   const data = window.SITE_DATA;
   let language = 'zh';
-  let filter = 'all';
   const queryLanguage = new URLSearchParams(location.search).get('lang');
   try { language = localStorage.getItem('zhangs-group-language') === 'en' ? 'en' : 'zh'; } catch {}
   if (queryLanguage === 'en' || queryLanguage === 'zh') language = queryLanguage;
@@ -62,28 +61,62 @@
   function renderPeople() {
     document.getElementById('faculty-list').replaceChildren(...data.faculty.map(profileCard));
     document.getElementById('advisor-list').replaceChildren(profileCard(data.advisor));
-    const students = document.getElementById('student-list'); students.replaceChildren();
-    ['phd','masters'].forEach(degree => {
-      const members=data.students.filter(person=>person.degree===degree);
-      if(!members.length)return;
-      const group=el('section','student-group');group.dataset.degree=degree;
-      const heading=el('h4','student-group-title',t(degree==='phd'?'doctoralHeading':'mastersHeading'));
-      heading.id=`students-${degree}-title`;group.setAttribute('aria-labelledby',heading.id);
-      const grid=el('div','student-grid');
-      members.forEach(person=>{
-        const card=el('article','student-card');card.dataset.degree=person.degree;
-        const meta=el('div','student-meta');
-        meta.append(el('h5','student-name',translate(person.name)),el('p','student-degree',t(degree==='phd'?'doctoralRole':'mastersRole')));
-        const year=person.enrollmentYear ? t('studentCohort').replace('{year}',String(person.enrollmentYear)) : t('studentYearPending');
-        meta.append(el('p','student-year',year));
-        if(translate(person.interest))meta.append(el('p','student-interest',translate(person.interest)));
-        card.append(portrait(person),meta);
-        const links=studentLinks(person);if(links.childElementCount)card.append(links);
-        grid.append(card);
-      });
-      group.append(heading,grid);students.append(group);
+    renderMemberGroups();
+  }
+  function renderMemberGroups() {
+    const container=document.getElementById('student-list');
+    const expanded=new Set([...container.querySelectorAll('details[open]')].map(group=>group.dataset.degree));
+    container.replaceChildren();
+    const groups=[
+      {key:'postdoc',heading:'postdocsHeading',members:data.postdocs},
+      {key:'phd',heading:'doctoralHeading',members:data.students.filter(person=>person.degree==='phd')},
+      {key:'masters',heading:'mastersHeading',members:data.students.filter(person=>person.degree==='masters')}
+    ];
+    groups.forEach(({key,heading,members})=>{
+      const group=el('details','student-group');group.id=`members-${key}`;group.dataset.degree=key;group.open=expanded.has(key);
+      const summary=el('summary','member-group-summary'),copy=el('div','member-group-copy');
+      const title=el('div','member-group-heading');title.append(el('h4','student-group-title',t(heading)));
+      if(members.length)title.append(el('span','member-group-count',String(members.length)));
+      copy.append(title);
+      const current=members.filter(person=>person.status!=='incoming');
+      const incoming=members.filter(person=>person.status==='incoming');
+      const cohorts=new Map();
+      incoming.forEach(person=>{const year=person.enrollmentYear||'';if(!cohorts.has(year))cohorts.set(year,[]);cohorts.get(year).push(person);});
+      const stats=[];
+      if(current.length)stats.push(t(key==='postdoc'?'currentPostdocCount':'currentStudentCount').replace('{count}',current.length));
+      for(const [year,people]of cohorts)stats.push(t('incomingStudentCount').replace('{year}',year).replace('{count}',people.length));
+      copy.append(el('p','member-group-meta',stats.join(' · ')||t('memberDetailsPending')));
+      const action=el('span','member-group-action'),actionText=el('span','',t(group.open?'collapseGroup':'expandGroup'));
+      const icon=el('span','member-group-icon');icon.setAttribute('aria-hidden','true');action.append(actionText,icon);
+      summary.append(copy,action);group.append(summary);
+      const body=el('div','member-group-body');
+      if(!members.length){
+        const empty=el('div','member-empty'),photo=el('img');photo.src='assets/photos/postdoc-01.png';photo.width=80;photo.height=80;photo.alt='';photo.loading='lazy';
+        const message=el('div');message.append(el('h5','',t(key==='postdoc'?'postdocDetailsPending':'memberDetailsPending')),el('p','',t('postdocDetailsNote')));empty.append(photo,message);body.append(empty);
+      }else{
+        if(current.length)body.append(memberCohort(current,t(key==='postdoc'?'currentPostdocs':'currentStudents'),key));
+        for(const [year,people]of cohorts)body.append(memberCohort(people,t('incomingStudents').replace('{year}',year),key));
+      }
+      group.append(body);group.addEventListener('toggle',()=>{actionText.textContent=t(group.open?'collapseGroup':'expandGroup');});container.append(group);
     });
-    filterStudents(false);
+  }
+  function memberCohort(members,label,degree) {
+    const section=el('section','member-cohort');section.append(el('h5','member-cohort-title',`${label} · ${members.length}`));
+    const grid=el('div','student-grid');
+    members.forEach(person=>{
+      const card=el('article','student-card');card.dataset.status=person.status||'current';
+      const meta=el('div','student-meta');
+      let role=t(degree==='postdoc'?'postdocRole':degree==='phd'?'doctoralRole':'mastersRole');
+      if(person.status==='incoming')role+=` · ${t('incomingRole')}`;
+      meta.append(el('h6','student-name',translate(person.name)),el('p','student-degree',role));
+      const year=person.enrollmentYear ? t(degree==='postdoc'?'postdocStartYear':person.status==='incoming'?'incomingYear':'studentCohort').replace('{year}',String(person.enrollmentYear)) : t(degree==='postdoc'?'postdocYearPending':'studentYearPending');
+      meta.append(el('p','student-year',year));
+      if(translate(person.interest))meta.append(el('p','student-interest',translate(person.interest)));
+      card.append(portrait(person),meta);
+      const links=studentLinks(person);if(links.childElementCount)card.append(links);
+      grid.append(card);
+    });
+    section.append(grid);return section;
   }
   function studentLinks(person) {
     const links=el('div','student-links');
@@ -102,16 +135,6 @@
       link.append(icon);links.append(link);
     }
     return links;
-  }
-  function filterStudents(announce = true) {
-    let count=0;
-    document.querySelectorAll('.student-card').forEach(card=>{card.hidden=filter!=='all'&&card.dataset.degree!==filter;if(!card.hidden)count++;});
-    document.querySelectorAll('.student-group').forEach(group=>{group.hidden=filter!=='all'&&group.dataset.degree!==filter;});
-    document.querySelectorAll('[data-filter]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.filter===filter)));
-    document.querySelector('.empty-filter')?.remove();
-    if(!count)document.getElementById('student-list').append(el('p','empty-filter',t('emptyStudents')));
-    if(announce)document.getElementById('student-status').textContent=t('studentCount').replace('{count}',String(count));
-    else document.getElementById('student-status').textContent='';
   }
   function renderPublications() {
     const target=document.getElementById('publication-list');target.replaceChildren();
@@ -151,7 +174,6 @@
     try{const url=new URL(location.href);url.searchParams.set('lang',language);history.replaceState(null,'',url);}catch{}
     render();
   }));
-  document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{filter=button.dataset.filter;filterStudents();}));
   menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',t(open?'closeMenu':'openMenu'));nav.classList.toggle('is-open',open);});
   nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
   document.addEventListener('keydown',event=>{if(event.key==='Escape'&&menu.getAttribute('aria-expanded')==='true'){closeMenu();menu.focus();}});
