@@ -12,7 +12,7 @@
 | --- | --- |
 | 张元建教授（课题组负责人） | `faculty-01.png` |
 | 首席学术顾问 | `advisor.png` |
-| 指导老师（博士后，预留） | `postdoc-01.png` |
+| 胡金城（指导老师、博士后） | `postdoc-01.png` |
 | 博士生 01—10 | `phd-01.png` 至 `phd-10.png` |
 | 硕士生 01—16 | `masters-01.png` 至 `masters-16.png` |
 
@@ -24,7 +24,7 @@
 
 - `advisor`：顾问；陈虹教授资料参考[同济大学官方主页](https://see.tongji.edu.cn/info/1376/10290.htm)，任职关系待确认。
 - `faculty`：课题组负责人，目前仅张元建教授，位于顾问上方。简介参考[同济大学官方介绍](https://cdhk.tongji.edu.cn/cd/e7/c38347a380391/page.htm)。
-- `postdocs`：指导老师栏目中的博士后人物名片，已预留一张照片与姓名占位卡。
+- `postdocs`：指导老师栏目中的博士后人物名片，目前为胡金城（Jincheng Hu），照片与简介待补充。
 - `students`：研究生，数组可增删；`degree` 为 `phd` 或 `masters`。
 - `research`：研究方向正文。
 - `ui`：首页与其他栏目文案。

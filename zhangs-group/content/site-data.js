@@ -72,7 +72,7 @@ window.SITE_DATA = {
   ],
   // Postdoctoral profiles appear as individual cards under Research Mentors.
   postdocs:[{
-    id:'postdoc-01',name:{zh:'姓名待补充',en:'Name to be added'},englishName:'',degree:'postdoc',
+    id:'postdoc-01',name:{zh:'胡金城',en:'Jincheng Hu'},englishName:'Jincheng Hu',degree:'postdoc',
     role:{zh:'博士后',en:'Postdoctoral researcher'},
     photo:'assets/photos/postdoc-01.png',photoPlaceholder:true,
     bio:{zh:'个人简介与研究方向待补充。',en:'Biography and research interests to be added.'}
