@@ -1,0 +1,39 @@
+/* Shared hover treatment for all card surfaces. Transforms preserve document flow. */
+:is(.research-card,.profile-card,.student-card,.student-group,.publication,.empty-publications,.member-group-summary){
+  position:relative;
+  transition:transform .26s cubic-bezier(.22,.61,.36,1),box-shadow .26s ease,border-color .26s ease,background-color .26s ease;
+}
+
+@media (hover:hover) and (pointer:fine){
+  :is(.research-card,.profile-card,.student-card,.publication,.empty-publications):hover,
+  .student-group:not([open]):hover{
+    z-index:1;
+    border-color:rgba(156,204,248,.6);
+    box-shadow:0 20px 44px rgba(0,7,22,.38),0 0 0 1px rgba(123,186,243,.1);
+  }
+  /* Expanded directories stay still while individual student cards lift. */
+  .student-group[open]>.member-group-summary:hover{
+    z-index:1;
+    box-shadow:0 10px 24px rgba(0,7,22,.28);
+  }
+}
+
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  :is(.research-card,.profile-card,.student-card,.publication,.empty-publications):hover{transform:translateY(-6px)}
+  .student-group:not([open]):hover{transform:translateY(-4px)}
+  .student-group[open]>.member-group-summary:hover{transform:translateY(-3px)}
+}
+
+/* Show the same visual emphasis for keyboard navigation without adding tab stops. */
+:is(.research-card,.profile-card,.student-card,.publication):has(:focus-visible),
+.student-group:has(>summary:focus-visible){
+  border-color:rgba(156,204,248,.6);
+  box-shadow:0 0 0 1px rgba(123,186,243,.25);
+}
+
+@media (prefers-reduced-motion:reduce){
+  :is(.research-card,.profile-card,.student-card,.student-group,.publication,.empty-publications,.member-group-summary){transition:none}
+}
+@media print{
+  :is(.research-card,.profile-card,.student-card,.student-group,.publication,.empty-publications,.member-group-summary){transform:none!important;box-shadow:none!important}
+}
