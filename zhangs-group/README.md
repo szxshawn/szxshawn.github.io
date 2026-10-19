@@ -25,7 +25,7 @@
 - `advisor`：顾问；陈虹教授资料参考[同济大学官方主页](https://see.tongji.edu.cn/info/1376/10290.htm)，任职关系待确认。
 - `faculty`：课题组负责人，目前仅张元建教授，位于顾问上方。简介参考[同济大学官方介绍](https://cdhk.tongji.edu.cn/cd/e7/c38347a380391/page.htm)。
 - `postdocs`：博士后资料，目前留空。
-- `students`：研究生，数组可增删；`degree` 为 `phd` 或 `masters`，`status` 为 `current` 或 `incoming`。
+- `students`：研究生，数组可增删；`degree` 为 `phd` 或 `masters`。
 - `research`：研究方向正文。
 - `ui`：首页与其他栏目文案。
 - `contactEmail`：课题组邮箱。
@@ -41,19 +41,18 @@ English: replace same-name PNGs in `assets/photos/`, and edit both `zh` and `en`
 
 三个分组按“博士后 → 博士研究生 → 硕士研究生”排列，默认全部收起；点击分组标题即可独立展开或收起，支持键盘操作。中英文切换保留当前展开状态。
 
-- `postdocs`：博士后资料数组，目前留空，仍显示分组与照片预留位置；有真实资料后加入人物记录即可，示例见 `materials/team/postdoc-example.json`。
-- 博士生：共 10 个位置，`phd-01` 至 `phd-07` 为在读，`phd-08` 至 `phd-10` 为 2027 级已确定入学。
-- 硕士生：共 16 个位置，`masters-01` 至 `masters-11` 为在读，`masters-12` 至 `masters-16` 为 2027 级已确定入学。
+- `postdocs`：博士后资料数组，目前留空，仍显示分组与照片预留位置；有真实资料后加入人物记录即可，示例见私有源码仓库 `szxshawn/zhangs-group` 中的 `materials/team/postdoc-example.json`。
+- 博士生：统一预留 10 个位置，`phd-01` 至 `phd-10`。
+- 硕士生：统一预留 16 个位置，`masters-01` 至 `masters-16`。
 
-人数由资料数组自动统计。`status: 'current'` 表示在读 / 在站，`status: 'incoming'` 表示已确定但尚未入学；正式入学后手动改为 `current`。2027 年入学时间依据本次提供的信息填写，在读成员的入学年份仍待补充。
+每个学历分组显示一份完整名单，人数由资料数组自动统计。姓名、照片与入学年份均保留为待补充位置，按实际资料填写即可。
 
 照片现在按分组编号：`phd-01.png` 至 `phd-10.png`、`masters-01.png` 至 `masters-16.png`，博士后预留 `postdoc-01.png`。早期 `student-01.png` 至 `student-06.png` 仍保留作备份，当前页面使用上述新文件名。请上传同名 PNG 以替换照片。
 
 每位成员可填写以下字段，中文写在 `zh`、英文写在 `en`：
 
 ```js
-status: 'incoming',
-enrollmentYear: '2027',
+enrollmentYear: '',
 email: '',
 website: '',
 scholar: ''

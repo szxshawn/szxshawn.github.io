@@ -78,14 +78,7 @@
       const title=el('div','member-group-heading');title.append(el('h4','student-group-title',t(heading)));
       if(members.length)title.append(el('span','member-group-count',String(members.length)));
       copy.append(title);
-      const current=members.filter(person=>person.status!=='incoming');
-      const incoming=members.filter(person=>person.status==='incoming');
-      const cohorts=new Map();
-      incoming.forEach(person=>{const year=person.enrollmentYear||'';if(!cohorts.has(year))cohorts.set(year,[]);cohorts.get(year).push(person);});
-      const stats=[];
-      if(current.length)stats.push(t(key==='postdoc'?'currentPostdocCount':'currentStudentCount').replace('{count}',current.length));
-      for(const [year,people]of cohorts)stats.push(t('incomingStudentCount').replace('{year}',year).replace('{count}',people.length));
-      copy.append(el('p','member-group-meta',stats.join(' · ')||t('memberDetailsPending')));
+      if(!members.length)copy.append(el('p','member-group-meta',t('memberDetailsPending')));
       const action=el('span','member-group-action'),actionText=el('span','',t(group.open?'collapseGroup':'expandGroup'));
       const icon=el('span','member-group-icon');icon.setAttribute('aria-hidden','true');action.append(actionText,icon);
       summary.append(copy,action);group.append(summary);
@@ -94,29 +87,26 @@
         const empty=el('div','member-empty'),photo=el('img');photo.src='assets/photos/postdoc-01.png';photo.width=80;photo.height=80;photo.alt='';photo.loading='lazy';
         const message=el('div');message.append(el('h5','',t(key==='postdoc'?'postdocDetailsPending':'memberDetailsPending')),el('p','',t('postdocDetailsNote')));empty.append(photo,message);body.append(empty);
       }else{
-        if(current.length)body.append(memberCohort(current,t(key==='postdoc'?'currentPostdocs':'currentStudents'),key));
-        for(const [year,people]of cohorts)body.append(memberCohort(people,t('incomingStudents').replace('{year}',year),key));
+        body.append(memberGrid(members,key));
       }
       group.append(body);group.addEventListener('toggle',()=>{actionText.textContent=t(group.open?'collapseGroup':'expandGroup');});container.append(group);
     });
   }
-  function memberCohort(members,label,degree) {
-    const section=el('section','member-cohort');section.append(el('h5','member-cohort-title',`${label} · ${members.length}`));
+  function memberGrid(members,degree) {
     const grid=el('div','student-grid');
     members.forEach(person=>{
-      const card=el('article','student-card');card.dataset.status=person.status||'current';
+      const card=el('article','student-card');
       const meta=el('div','student-meta');
-      let role=t(degree==='postdoc'?'postdocRole':degree==='phd'?'doctoralRole':'mastersRole');
-      if(person.status==='incoming')role+=` · ${t('incomingRole')}`;
-      meta.append(el('h6','student-name',translate(person.name)),el('p','student-degree',role));
-      const year=person.enrollmentYear ? t(degree==='postdoc'?'postdocStartYear':person.status==='incoming'?'incomingYear':'studentCohort').replace('{year}',String(person.enrollmentYear)) : t(degree==='postdoc'?'postdocYearPending':'studentYearPending');
+      const role=t(degree==='postdoc'?'postdocRole':degree==='phd'?'doctoralRole':'mastersRole');
+      meta.append(el('h5','student-name',translate(person.name)),el('p','student-degree',role));
+      const year=person.enrollmentYear ? t(degree==='postdoc'?'postdocStartYear':'studentCohort').replace('{year}',String(person.enrollmentYear)) : t(degree==='postdoc'?'postdocYearPending':'studentYearPending');
       meta.append(el('p','student-year',year));
       if(translate(person.interest))meta.append(el('p','student-interest',translate(person.interest)));
       card.append(portrait(person),meta);
       const links=studentLinks(person);if(links.childElementCount)card.append(links);
       grid.append(card);
     });
-    section.append(grid);return section;
+    return grid;
   }
   function studentLinks(person) {
     const links=el('div','student-links');
