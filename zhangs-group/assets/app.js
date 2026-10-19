@@ -65,16 +65,50 @@
       card.append(portrait(person),info);faculty.append(card);
     });
     const students = document.getElementById('student-list'); students.replaceChildren();
-    data.students.forEach(person => {
-      const card=el('article','student-card'); card.dataset.degree=person.degree;
-      const meta=el('div','student-meta');meta.append(el('h4','',translate(person.name)),el('span','student-degree',t(person.degree==='phd'?'phdStudents':'mastersStudents')));
-      card.append(portrait(person),meta,el('p','student-interest',translate(person.interest)));students.append(card);
+    ['phd','masters'].forEach(degree => {
+      const members=data.students.filter(person=>person.degree===degree);
+      if(!members.length)return;
+      const group=el('section','student-group');group.dataset.degree=degree;
+      const heading=el('h4','student-group-title',t(degree==='phd'?'doctoralHeading':'mastersHeading'));
+      heading.id=`students-${degree}-title`;group.setAttribute('aria-labelledby',heading.id);
+      const grid=el('div','student-grid');
+      members.forEach(person=>{
+        const card=el('article','student-card');card.dataset.degree=person.degree;
+        const meta=el('div','student-meta');
+        meta.append(el('h5','student-name',translate(person.name)),el('p','student-degree',t(degree==='phd'?'doctoralRole':'mastersRole')));
+        const year=person.enrollmentYear ? t('studentCohort').replace('{year}',String(person.enrollmentYear)) : t('studentYearPending');
+        meta.append(el('p','student-year',year));
+        if(translate(person.interest))meta.append(el('p','student-interest',translate(person.interest)));
+        card.append(portrait(person),meta);
+        const links=studentLinks(person);if(links.childElementCount)card.append(links);
+        grid.append(card);
+      });
+      group.append(heading,grid);students.append(group);
     });
     filterStudents(false);
+  }
+  function studentLinks(person) {
+    const links=el('div','student-links');
+    for(const field of ['scholar','email','website']){
+      const value=person[field];if(!value)continue;
+      const label=t(`student${field[0].toUpperCase()+field.slice(1)}`);
+      let link;
+      if(field==='email'){
+        if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value))continue;
+        link=el('a','student-profile-link');link.href=`mailto:${value}`;
+      }else{
+        link=external(value,'','student-profile-link');if(link.tagName!=='A')continue;
+      }
+      link.setAttribute('aria-label',`${translate(person.name)} · ${label}`);link.title=label;
+      const icon=el('img');icon.src=`assets/student-${field}.svg`;icon.alt='';icon.width=19;icon.height=19;
+      link.append(icon);links.append(link);
+    }
+    return links;
   }
   function filterStudents(announce = true) {
     let count=0;
     document.querySelectorAll('.student-card').forEach(card=>{card.hidden=filter!=='all'&&card.dataset.degree!==filter;if(!card.hidden)count++;});
+    document.querySelectorAll('.student-group').forEach(group=>{group.hidden=filter!=='all'&&group.dataset.degree!==filter;});
     document.querySelectorAll('[data-filter]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.filter===filter)));
     document.querySelector('.empty-filter')?.remove();
     if(!count)document.getElementById('student-list').append(el('p','empty-filter',t('emptyStudents')));
@@ -125,4 +159,12 @@
   document.addEventListener('keydown',event=>{if(event.key==='Escape'&&menu.getAttribute('aria-expanded')==='true'){closeMenu();menu.focus();}});
   matchMedia('(min-width: 901px)').addEventListener('change',event=>{if(event.matches)closeMenu();});
   render();
+  // Resolve shared section links after dynamic profiles and the hero finish laying out.
+  if(location.hash){
+    const revealSection=()=>requestAnimationFrame(()=>{
+      try{document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView({block:'start',behavior:'instant'});}catch{}
+    });
+    if(document.readyState==='complete')revealSection();
+    else window.addEventListener('load',revealSection,{once:true});
+  }
 })();

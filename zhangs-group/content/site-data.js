@@ -24,7 +24,11 @@ window.SITE_DATA = {
     peopleIntro:{zh:'跨越算法与系统，在交流、协作与实践中推进研究。',en:'Advancing research across algorithms and systems through dialogue, collaboration and practice.'},
     advisorHeading:{zh:'首席学术顾问',en:'Chief Academic Advisor'},advisorSubheading:{zh:'学术视野与研究引领',en:'Perspective and academic guidance'},
     facultyHeading:{zh:'导师',en:'Faculty'},facultySubheading:{zh:'研究指导与团队建设',en:'Mentorship and research leadership'},
-    studentsHeading:{zh:'学生',en:'Students'},studentsNote:{zh:'成员姓名、照片及研究主题待补充。',en:'Member profiles, photos and research topics will be added.'},
+    studentsHeading:{zh:'学生',en:'Students'},studentsNote:{zh:'成员姓名、照片及入学年份待补充。',en:'Names, photos and enrollment years will be added.'},
+    doctoralHeading:{zh:'博士研究生',en:'Doctoral Students'},mastersHeading:{zh:'硕士研究生',en:'Master’s Students'},
+    doctoralRole:{zh:'博士生',en:'PhD student'},mastersRole:{zh:'硕士生',en:'Master’s student'},
+    studentCohort:{zh:'{year} 级',en:'Enrolled {year}'},studentYearPending:{zh:'入学年份待补充',en:'Enrollment year to be added'},
+    studentEmail:{zh:'邮箱',en:'Email'},studentWebsite:{zh:'个人主页',en:'Personal website'},studentScholar:{zh:'学术主页',en:'Scholar profile'},
     studentFilter:{zh:'筛选学生',en:'Filter students'},allStudents:{zh:'全部',en:'All'},phdStudents:{zh:'博士生',en:'PhD'},mastersStudents:{zh:'硕士生',en:'Master’s'},
     studentCount:{zh:'显示 {count} 位学生',en:'Showing {count} students'},emptyStudents:{zh:'该类别暂无成员。',en:'No members in this category yet.'},
     photoPlaceholder:{zh:'照片待补充',en:'Photo to be added'},portraitAlt:{zh:'{name}的照片',en:'Portrait of {name}'},
@@ -63,12 +67,12 @@ window.SITE_DATA = {
     {id:'faculty-02',name:{zh:'导师姓名',en:'Faculty name'},englishName:'Name to be added',role:{zh:'导师 / 合作导师（待补充）',en:'Faculty / Co-supervisor (to be added)'},photo:'assets/photos/faculty-02.png',photoPlaceholder:true,bio:{zh:'研究方向、个人简介与联系方式待补充。',en:'Research interests, biography and contact details to be added.'}}
   ],
   students:[
-    {id:'student-01',name:{zh:'学生姓名 01',en:'Student name 01'},degree:'phd',photo:'assets/photos/student-01.png',photoPlaceholder:true,interest:{zh:'研究主题待补充',en:'Research topic to be added'}},
-    {id:'student-02',name:{zh:'学生姓名 02',en:'Student name 02'},degree:'phd',photo:'assets/photos/student-02.png',photoPlaceholder:true,interest:{zh:'研究主题待补充',en:'Research topic to be added'}},
-    {id:'student-03',name:{zh:'学生姓名 03',en:'Student name 03'},degree:'phd',photo:'assets/photos/student-03.png',photoPlaceholder:true,interest:{zh:'研究主题待补充',en:'Research topic to be added'}},
-    {id:'student-04',name:{zh:'学生姓名 04',en:'Student name 04'},degree:'masters',photo:'assets/photos/student-04.png',photoPlaceholder:true,interest:{zh:'研究主题待补充',en:'Research topic to be added'}},
-    {id:'student-05',name:{zh:'学生姓名 05',en:'Student name 05'},degree:'masters',photo:'assets/photos/student-05.png',photoPlaceholder:true,interest:{zh:'研究主题待补充',en:'Research topic to be added'}},
-    {id:'student-06',name:{zh:'学生姓名 06',en:'Student name 06'},degree:'masters',photo:'assets/photos/student-06.png',photoPlaceholder:true,interest:{zh:'研究主题待补充',en:'Research topic to be added'}}
+    {id:'student-01',name:{zh:'学生姓名 01',en:'Student name 01'},degree:'phd',enrollmentYear:'',email:'',website:'',scholar:'',photo:'assets/photos/student-01.png',photoPlaceholder:true,interest:{zh:'研究主题待补充',en:'Research topic to be added'}},
+    {id:'student-02',name:{zh:'学生姓名 02',en:'Student name 02'},degree:'phd',enrollmentYear:'',email:'',website:'',scholar:'',photo:'assets/photos/student-02.png',photoPlaceholder:true,interest:{zh:'研究主题待补充',en:'Research topic to be added'}},
+    {id:'student-03',name:{zh:'学生姓名 03',en:'Student name 03'},degree:'phd',enrollmentYear:'',email:'',website:'',scholar:'',photo:'assets/photos/student-03.png',photoPlaceholder:true,interest:{zh:'研究主题待补充',en:'Research topic to be added'}},
+    {id:'student-04',name:{zh:'学生姓名 04',en:'Student name 04'},degree:'masters',enrollmentYear:'',email:'',website:'',scholar:'',photo:'assets/photos/student-04.png',photoPlaceholder:true,interest:{zh:'研究主题待补充',en:'Research topic to be added'}},
+    {id:'student-05',name:{zh:'学生姓名 05',en:'Student name 05'},degree:'masters',enrollmentYear:'',email:'',website:'',scholar:'',photo:'assets/photos/student-05.png',photoPlaceholder:true,interest:{zh:'研究主题待补充',en:'Research topic to be added'}},
+    {id:'student-06',name:{zh:'学生姓名 06',en:'Student name 06'},degree:'masters',enrollmentYear:'',email:'',website:'',scholar:'',photo:'assets/photos/student-06.png',photoPlaceholder:true,interest:{zh:'研究主题待补充',en:'Research topic to be added'}}
   ],
   // Example format in materials/publications/example.json. Empty until real publications are supplied.
   publications:[]

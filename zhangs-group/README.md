@@ -33,3 +33,20 @@
 所有人物照片均为占位图。内容为初稿，没有虚构研究成果。私有仓库 `szxshawn/zhangs-group` 保存了初始源码和资料模板，**不会自动同步到此目录**；修改线上网站请直接编辑本目录。
 
 English: replace same-name PNGs in `assets/photos/`, and edit both `zh` and `en` copy in `content/site-data.js`. This directory is the live publishing source. The private source backup does not sync automatically.
+
+## 学生卡片资料
+
+学生按博士研究生、硕士研究生分组，圆形头像自动裁切；照片文件名保持不变。
+
+在每位学生的资料中可填写：
+
+```js
+enrollmentYear: '2026', // 入学年份；此处仅为格式示例
+email: '',            // 邮箱
+website: '',          // https:// 开头的个人主页
+scholar: ''           // https:// 开头的学术主页
+```
+
+年份留空时显示“入学年份待补充”。链接留空时不显示图标，填入有效地址后自动出现对应入口。`interest` 可填写中英文研究主题，也可留空以隐藏。使用头像时建议将人脸放在照片中心偏上位置。
+
+布局参考 [PRLab 学生页面](https://prlab-nju.com/nju/people/) 的圆形头像、分组与居中信息结构；未使用对方的人员资料或照片。
