@@ -1,0 +1,75 @@
+/* Edit bilingual content and people here. Photo files live in assets/photos/.
+   所有正文与人员资料在此修改；zh 为中文，en 为英文。请在确认顾问任职后修改相应说明。 */
+window.SITE_DATA = {
+  name: 'zhang’s group',
+  contactEmail: '',
+  ui: {
+    skip:{zh:'跳转到正文',en:'Skip to content'},navigation:{zh:'主导航',en:'Main navigation'},
+    navAbout:{zh:'关于我们',en:'About'},navResearch:{zh:'研究方向',en:'Research'},navPeople:{zh:'团队成员',en:'People'},navPublications:{zh:'研究成果',en:'Publications'},navContact:{zh:'联系我们',en:'Contact'},
+    openMenu:{zh:'打开导航',en:'Open navigation'},closeMenu:{zh:'关闭导航',en:'Close navigation'},
+    heroEyebrow:{zh:'自动驾驶 × 具身智能',en:'Autonomous driving × Embodied intelligence'},
+    heroLine1:{zh:'理解世界，',en:'Understanding the world.'},heroLine2:{zh:'让智能行动。',en:'Learning to act.'},
+    heroDescription:{zh:'从道路到更广阔的物理世界，探索感知、决策与控制的协同，让智能系统在真实环境中可靠地行动。',en:'From roads to the wider physical world, we explore how perception, decision-making and control work together to enable reliable intelligent action.'},
+    exploreResearch:{zh:'探索我们的研究',en:'Explore our research'},meetTeam:{zh:'认识团队',en:'Meet the team'},
+    heroCaption:{zh:'感知 · 决策 · 控制 · 学习',en:'PERCEPTION · PLANNING · CONTROL · LEARNING'},
+    sceneAlt:{zh:'连接自动驾驶汽车、机器人与环境感知的研究概念示意图',en:'Concept illustration connecting an autonomous vehicle, a robotic arm and environmental perception'},
+    figureCaption:{zh:'从环境理解，到自主行动',en:'From understanding to autonomous action'},
+    aboutEyebrow:{zh:'关于课题组',en:'About the group'},
+    aboutTitle:{zh:'面向真实场景，连接智能与行动。',en:'Connecting intelligence and action in the real world.'},
+    aboutDescription:{zh:'zhang’s group 聚焦自动驾驶与具身智能，关注智能体如何理解复杂环境、形成合理决策，并通过运动与交互完成任务。我们希望将数据驱动的学习方法与控制理论相结合，探索兼具泛化能力、可解释性与安全性的智能系统。',en:'zhang’s group focuses on autonomous driving and embodied intelligence. We study how agents understand complex environments, make decisions, and complete tasks through motion and interaction. Our research aims to bring data-driven learning together with control theory, with an emphasis on generalization, interpretability and safety.'},
+    aboutKeyword1:{zh:'以问题为起点',en:'Problem-driven inquiry'},aboutKeyword2:{zh:'以系统为载体',en:'Systems thinking'},aboutKeyword3:{zh:'以真实世界为检验',en:'Real-world evaluation'},
+    researchEyebrow:{zh:'02 / 研究方向',en:'02 / Research'},researchTitle:{zh:'两个方向，一个共同问题。',en:'Two directions. One shared question.'},
+    researchIntro:{zh:'智能体如何在复杂、变化的世界中，自主完成任务？',en:'How can intelligent agents act autonomously in a complex, changing world?'},
+    peopleEyebrow:{zh:'03 / 团队成员',en:'03 / People'},peopleTitle:{zh:'一起探索，一起成长。',en:'Shared curiosity. Collective growth.'},
+    peopleIntro:{zh:'跨越算法与系统，在交流、协作与实践中推进研究。',en:'Advancing research across algorithms and systems through dialogue, collaboration and practice.'},
+    advisorHeading:{zh:'首席学术顾问',en:'Chief Academic Advisor'},advisorSubheading:{zh:'学术视野与研究引领',en:'Perspective and academic guidance'},
+    facultyHeading:{zh:'导师',en:'Faculty'},facultySubheading:{zh:'研究指导与团队建设',en:'Mentorship and research leadership'},
+    studentsHeading:{zh:'学生',en:'Students'},studentsNote:{zh:'成员姓名、照片及研究主题待补充。',en:'Member profiles, photos and research topics will be added.'},
+    studentFilter:{zh:'筛选学生',en:'Filter students'},allStudents:{zh:'全部',en:'All'},phdStudents:{zh:'博士生',en:'PhD'},mastersStudents:{zh:'硕士生',en:'Master’s'},
+    studentCount:{zh:'显示 {count} 位学生',en:'Showing {count} students'},emptyStudents:{zh:'该类别暂无成员。',en:'No members in this category yet.'},
+    photoPlaceholder:{zh:'照片待补充',en:'Photo to be added'},portraitAlt:{zh:'{name}的照片',en:'Portrait of {name}'},
+    publicationsEyebrow:{zh:'04 / 研究成果',en:'04 / Publications'},publicationsTitle:{zh:'让研究留下清晰的足迹。',en:'Ideas, experiments and open knowledge.'},
+    publicationsIntro:{zh:'论文、开源项目与系统演示将在这里持续更新。',en:'A growing record of publications, open-source projects and system demonstrations.'},
+    publicationsEmptyTitle:{zh:'研究成果整理中',en:'Publications will be added soon'},publicationsEmptyText:{zh:'我们将在这里分享论文、代码与项目进展。',en:'This space will feature our papers, code and project updates.'},
+    paperLink:{zh:'论文 ↗',en:'Paper ↗'},codeLink:{zh:'代码 ↗',en:'Code ↗'},projectLink:{zh:'项目 ↗',en:'Project ↗'},
+    contactEyebrow:{zh:'05 / 联系我们',en:'05 / Contact'},contactTitle:{zh:'从一次交流开始。',en:'It starts with a conversation.'},
+    contactDescription:{zh:'欢迎对自动驾驶、具身智能感兴趣的同学与研究者，与我们交流研究想法、探索合作机会。',en:'We welcome conversations with students and researchers interested in autonomous driving and embodied intelligence. Let’s exchange ideas and explore opportunities to collaborate.'},
+    contactEmailLabel:{zh:'课题组邮箱',en:'GROUP EMAIL'},emailPending:{zh:'联系方式待补充',en:'Contact details coming soon'},contactNote:{zh:'联系方式完善后，将在此公布。',en:'Our contact details will be published here when available.'},contactTeam:{zh:'了解我们的团队',en:'Meet our people'},
+    footerDraft:{zh:'内容初稿 · 持续完善中',en:'Draft content · Work in progress'},backTop:{zh:'返回顶部',en:'Back to top'},
+    description:{zh:'zhang’s group 聚焦自动驾驶与具身智能，探索从环境理解到智能行动的研究。',en:'zhang’s group explores autonomous driving and embodied intelligence, connecting environmental understanding with intelligent action.'}
+  },
+  research: [
+    {id:'autonomous-driving',number:'01',icon:'car',title:{zh:'自动驾驶',en:'Autonomous Driving'},subtitle:'Autonomous Driving',
+      description:{zh:'面向开放道路与复杂交通交互，研究从多模态环境感知到行为预测、决策规划与运动控制的方法，探索学习驱动与模型驱动相结合的自动驾驶系统。',en:'We study multimodal perception, behavior prediction, decision-making, planning and motion control for open roads and complex traffic interactions, combining learning-based approaches with model-based reasoning.'},
+      tags:[{zh:'多模态感知',en:'Multimodal perception'},{zh:'预测与规划',en:'Prediction & planning'},{zh:'安全控制',en:'Safe control'}],
+      question:{zh:'在不确定的交通环境中，做出可靠决策。',en:'Reliable decisions in uncertain traffic environments.'}},
+    {id:'embodied-intelligence',number:'02',icon:'robot',title:{zh:'具身智能',en:'Embodied Intelligence'},subtitle:'Embodied Intelligence',
+      description:{zh:'面向与物理世界持续交互的智能体，研究视觉、语言与动作的协同表示，探索任务规划、技能学习和闭环控制，使智能体能够在变化的环境中理解任务并执行行动。',en:'We investigate shared representations of vision, language and action for agents interacting with the physical world, exploring task planning, skill learning and closed-loop control in changing environments.'},
+      tags:[{zh:'视觉—语言—动作',en:'Vision–language–action'},{zh:'技能学习',en:'Skill learning'},{zh:'物理交互',en:'Physical interaction'}],
+      question:{zh:'让理解转化为行动，让学习发生于交互。',en:'Turning understanding into action, and interaction into learning.'}}
+  ],
+  advisor:{
+    name:{zh:'陈虹 教授',en:'Prof. Hong Chen'},englishName:'Hong Chen',
+    role:{zh:'同济大学教授',en:'Professor, Tongji University'},
+    photo:'assets/photos/advisor.png',photoPlaceholder:true,
+    badge:{zh:'人选示例 · 任职待确认',en:'Draft profile · Appointment to be confirmed'},
+    bio:{zh:'研究聚焦先进控制理论与方法、汽车控制与自动驾驶，长期从事预测控制及其车辆系统应用研究。',en:'Her research focuses on advanced control theory and methods, automotive control and autonomous driving, including predictive control and its applications in vehicle systems.'},
+    note:{zh:'人物简介根据同济大学公开资料整理；首席学术顾问任职关系待课题组确认。',en:'Biography adapted from Tongji University’s public profile. The advisory appointment is subject to confirmation by the group.'},
+    profileLabel:{zh:'同济大学官方介绍 ↗',en:'Official Tongji University profile ↗'},
+    profileUrl:'https://see.tongji.edu.cn/info/1376/10290.htm'
+  },
+  faculty:[
+    {id:'faculty-01',name:{zh:'导师姓名',en:'Faculty name'},englishName:'Name to be added',role:{zh:'课题组负责人',en:'Group lead'},photo:'assets/photos/faculty-01.png',photoPlaceholder:true,bio:{zh:'关注自动驾驶与具身智能。个人简介、教育背景与代表性成果待补充。',en:'Autonomous driving and embodied intelligence. Biography, education and selected work to be added.'}},
+    {id:'faculty-02',name:{zh:'导师姓名',en:'Faculty name'},englishName:'Name to be added',role:{zh:'导师 / 合作导师（待补充）',en:'Faculty / Co-supervisor (to be added)'},photo:'assets/photos/faculty-02.png',photoPlaceholder:true,bio:{zh:'研究方向、个人简介与联系方式待补充。',en:'Research interests, biography and contact details to be added.'}}
+  ],
+  students:[
+    {id:'student-01',name:{zh:'学生姓名 01',en:'Student name 01'},degree:'phd',photo:'assets/photos/student-01.png',photoPlaceholder:true,interest:{zh:'研究主题待补充',en:'Research topic to be added'}},
+    {id:'student-02',name:{zh:'学生姓名 02',en:'Student name 02'},degree:'phd',photo:'assets/photos/student-02.png',photoPlaceholder:true,interest:{zh:'研究主题待补充',en:'Research topic to be added'}},
+    {id:'student-03',name:{zh:'学生姓名 03',en:'Student name 03'},degree:'phd',photo:'assets/photos/student-03.png',photoPlaceholder:true,interest:{zh:'研究主题待补充',en:'Research topic to be added'}},
+    {id:'student-04',name:{zh:'学生姓名 04',en:'Student name 04'},degree:'masters',photo:'assets/photos/student-04.png',photoPlaceholder:true,interest:{zh:'研究主题待补充',en:'Research topic to be added'}},
+    {id:'student-05',name:{zh:'学生姓名 05',en:'Student name 05'},degree:'masters',photo:'assets/photos/student-05.png',photoPlaceholder:true,interest:{zh:'研究主题待补充',en:'Research topic to be added'}},
+    {id:'student-06',name:{zh:'学生姓名 06',en:'Student name 06'},degree:'masters',photo:'assets/photos/student-06.png',photoPlaceholder:true,interest:{zh:'研究主题待补充',en:'Research topic to be added'}}
+  ],
+  // Example format in materials/publications/example.json. Empty until real publications are supplied.
+  publications:[]
+};

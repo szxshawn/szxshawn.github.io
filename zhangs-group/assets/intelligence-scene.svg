@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="560" viewBox="0 0 680 560" fill="none">
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0v32" stroke="#dce4ec" stroke-width=".65"/></pattern>
+    <linearGradient id="car" x1="140" y1="335" x2="260" y2="430" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset="1" stop-color="#c5d4e3"/></linearGradient>
+    <linearGradient id="beam" x1="228" y1="348" x2="337" y2="218" gradientUnits="userSpaceOnUse"><stop stop-color="#799dc9" stop-opacity=".2"/><stop offset="1" stop-color="#799dc9" stop-opacity="0"/></linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="m1 1 7 4-7 4" fill="none" stroke="#476b96" stroke-width="1.5"/></marker>
+  </defs>
+  <rect x="30" y="25" width="620" height="495" fill="url(#grid)"/>
+  <path d="m33 427 343-199 272 157-343 198L33 427Z" fill="#e4ebf2" stroke="#c3d0df"/>
+  <path d="m33 471 343-199 272 157" stroke="#f9fbfd" stroke-width="1.3"/>
+  <path d="m115 474 337-197M202 524l337-196" stroke="#fff" stroke-width="2"/>
+  <path d="m157 499 337-197" stroke="#9caec2" stroke-width="1.3" stroke-dasharray="11 10"/>
+  <path d="m221 450 69-40 20-49 80-46" stroke="#416b9a" stroke-width="1.5" stroke-dasharray="4 5" marker-end="url(#arrow)"/>
+  <path d="m254 352 77-130 91 94-168 36Z" fill="url(#beam)"/>
+  <path d="M216 350a56 56 0 0 1 96-21M207 325a81 81 0 0 1 132-23M192 301a109 109 0 0 1 171-26" stroke="#93abc4" stroke-width="1" stroke-dasharray="4 5"/>
+  <!-- Vehicle, an isometric research illustration -->
+  <ellipse cx="213" cy="420" rx="83" ry="22" fill="#a3b4c7" opacity=".2" transform="rotate(-30 213 420)"/>
+  <path d="m135 399 100-59 60 35v44l-101 59-59-35v-44Z" fill="#bacadb" stroke="#4a6b91" stroke-width="1.4"/>
+  <path d="m135 399 100-59 60 35-101 60-59-36Z" fill="url(#car)" stroke="#4a6b91" stroke-width="1.4"/>
+  <path d="m151 390 23-34 51-29 43 27 10 30-84 49-43-43Z" fill="#dce6ef" stroke="#4a6b91" stroke-width="1.2"/>
+  <path d="m174 356 51-29 43 27-51 30-43-28Z" fill="#eaf0f5" stroke="#4a6b91" stroke-width="1.2"/>
+  <path d="m158 390 19-27 34 22-18 35-35-30Z" fill="#41658e"/>
+  <path d="m218 387 47-28 7 24-66 39 12-35Z" fill="#6286ad" stroke="#4a6b91" stroke-width="1"/>
+  <path d="m238 375 1 26" stroke="#e2eaf1"/>
+  <path d="m194 435 101-60v44l-101 59v-43Z" fill="#d3dfeb" stroke="#4a6b91" stroke-width="1.4"/>
+  <path d="m205 439 74-43m-56 44 6-3" stroke="#7c97b5"/>
+  <path d="m138 415 11 7m27 16 13 7" stroke="#e8f2ff" stroke-width="4"/>
+  <ellipse cx="218" cy="451" rx="11" ry="17" transform="rotate(25 218 451)" fill="#355474"/>
+  <ellipse cx="218" cy="451" rx="5" ry="9" transform="rotate(25 218 451)" fill="#afc4d8"/>
+  <ellipse cx="277" cy="416" rx="11" ry="17" transform="rotate(25 277 416)" fill="#355474"/>
+  <ellipse cx="277" cy="416" rx="5" ry="9" transform="rotate(25 277 416)" fill="#afc4d8"/>
+  <path d="m210 343 11-6 10 6v6l-11 6-10-6v-6Z" fill="#fff" stroke="#557ba3"/>
+  <ellipse cx="220" cy="342" rx="10" ry="5" fill="#6488af"/>
+  <!-- A robotic arm, on a shared physical-world plane -->
+  <path d="m392 310 79-45 88 51-78 45-89-51Z" fill="#d1dde9" stroke="#7d99b8"/>
+  <path d="m392 310 89 51v13l-89-51v-13Zm89 51 78-45v13l-78 45v-13Z" fill="#becede" stroke="#7d99b8"/>
+  <ellipse cx="470" cy="309" rx="39" ry="21" fill="#93aeca" stroke="#547ba4"/>
+  <path d="M431 291v18c0 12 78 26 78 0v-18" fill="#c6d6e6" stroke="#547ba4"/>
+  <ellipse cx="470" cy="291" rx="39" ry="21" fill="#e7eef5" stroke="#547ba4"/>
+  <path d="m446 283 25-100 26 10-8 99" fill="#f6f9fc" stroke="#416b97" stroke-width="1.7"/>
+  <path d="m474 194 17 3-9 87-16-5 8-85Z" fill="#bfd0e3"/>
+  <circle cx="481" cy="184" r="24" fill="#d3e1ee" stroke="#416b97" stroke-width="1.7"/>
+  <circle cx="481" cy="184" r="11" fill="#4e76a2"/><circle cx="481" cy="184" r="5" fill="#dbe7f3"/>
+  <path d="m464 164-66-67-23 20 87 82" fill="#f9fbfe" stroke="#416b97" stroke-width="1.7"/>
+  <path d="m386 118 76 72 10-17-74-69" fill="#bccfe2"/>
+  <circle cx="386" cy="107" r="22" fill="#d7e3ef" stroke="#416b97" stroke-width="1.7"/>
+  <circle cx="386" cy="107" r="10" fill="#4e76a2"/>
+  <path d="m373 91-58 33 9 21 64-24" fill="#f2f7fb" stroke="#416b97" stroke-width="1.7"/>
+  <path d="m320 134 56-28 7 10-59 24" fill="#c0d2e5"/>
+  <circle cx="317" cy="136" r="15" fill="#cadaeb" stroke="#416b97" stroke-width="1.5"/>
+  <circle cx="317" cy="136" r="6" fill="#4e76a2"/>
+  <path d="m308 148-14 18 4 18m27-33 7 14-14 18" stroke="#416b97" stroke-width="7"/>
+  <path d="m308 148-14 18 4 18m27-33 7 14-14 18" stroke="#b7cce1" stroke-width="3"/>
+  <path d="m293 204 20-12 21 12v25l-20 12-21-12v-25Z" fill="#dde8f4" stroke="#517ca9"/>
+  <path d="m293 204 21 12 20-12m-20 12v25" stroke="#517ca9"/>
+  <path d="M278 184v-9h12m54 0h9v12m0 53v10h-12m-53 0h-10v-12" stroke="#92abc5"/>
+  <!-- Perception nodes and light architectural scaffolding -->
+  <path d="M77 300V182l67-38 71 41v111M77 182l70 40 68-37m-68 37v117m-50-87 40 23m-40-44 40 23m20-68 42-24" stroke="#b8c9d9" stroke-width="1"/>
+  <path d="M102 169v-31l40-23 46 26v28m-46-54v31" stroke="#cedae5"/>
+  <path d="M532 146v-42l52-30v126l-51 30m51-156 36 21v119l-36 21m-38-115 23-13m-23 30 23-13m-23 30 23-13m-23 30 23-13" stroke="#bdccdc"/>
+  <path d="m182 101 74-42 64 37m-94 16 30-17 29 16" stroke="#c7d5e3"/>
+  <path d="M147 267c-1-52 79-80 127-54m73 57c26 2 48-6 59-30" stroke="#4d77a4" stroke-width="1" stroke-dasharray="4 5" marker-end="url(#arrow)"/>
+  <circle cx="148" cy="267" r="5" fill="#fff" stroke="#5a80a8"/><circle cx="347" cy="270" r="4" fill="#648cb5"/>
+  <circle cx="115" cy="92" r="3" fill="#8ba7c4"/><path d="M115 102v28m10-15h-20" stroke="#a4b9cf"/>
+  <circle cx="588" cy="279" r="3" fill="#8ba7c4"/><path d="M588 289v28m10-15h-20" stroke="#a4b9cf"/>
+  <path d="m86 372-11 6m0-12 11 6m-11 6v-12M571 463l11-6m0 12-11-6m11-6v12" stroke="#8ba4be"/>
+  <text x="60" y="352" font-family="monospace" font-size="9" letter-spacing="2" fill="#65809d">01 / DRIVE</text>
+  <text x="451" y="68" font-family="monospace" font-size="9" letter-spacing="2" fill="#65809d">02 / EMBODY</text>
+</svg>
