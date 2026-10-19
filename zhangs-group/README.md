@@ -10,8 +10,8 @@
 
 | 位置 | 文件名 |
 | --- | --- |
+| 张元建教授（课题组负责人） | `faculty-01.png` |
 | 首席学术顾问 | `advisor.png` |
-| 导师 1、导师 2 | `faculty-01.png`、`faculty-02.png` |
 | 学生 1—6 | `student-01.png` 至 `student-06.png` |
 
 建议使用 4:5 竖版照片，人物居中，至少 600 × 750 像素。也可上传 JPG / WebP，但需同步修改资料中的 `photo` 文件路径。不要把 JPG 仅通过改扩展名伪装成 PNG。
@@ -21,7 +21,7 @@
 编辑 [`content/site-data.js`](content/site-data.js)，中文写在 `zh`，英文写在 `en`。
 
 - `advisor`：顾问；陈虹教授资料参考[同济大学官方主页](https://see.tongji.edu.cn/info/1376/10290.htm)，任职关系待确认。
-- `faculty`：导师，数组可增删。
+- `faculty`：课题组负责人，目前仅张元建教授，位于顾问上方。简介参考[同济大学官方介绍](https://cdhk.tongji.edu.cn/cd/e7/c38347a380391/page.htm)。
 - `students`：学生，数组可增删；`degree` 为 `phd` 或 `masters`。
 - `research`：研究方向正文。
 - `ui`：首页与其他栏目文案。

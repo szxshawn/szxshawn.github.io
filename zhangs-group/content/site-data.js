@@ -23,7 +23,7 @@ window.SITE_DATA = {
     peopleEyebrow:{zh:'03 / 团队成员',en:'03 / People'},peopleTitle:{zh:'一起探索，一起成长。',en:'Shared curiosity. Collective growth.'},
     peopleIntro:{zh:'跨越算法与系统，在交流、协作与实践中推进研究。',en:'Advancing research across algorithms and systems through dialogue, collaboration and practice.'},
     advisorHeading:{zh:'首席学术顾问',en:'Chief Academic Advisor'},advisorSubheading:{zh:'学术视野与研究引领',en:'Perspective and academic guidance'},
-    facultyHeading:{zh:'导师',en:'Faculty'},facultySubheading:{zh:'研究指导与团队建设',en:'Mentorship and research leadership'},
+    facultyHeading:{zh:'导师（课题组负责人）',en:'Principal Investigator'},facultySubheading:{zh:'研究指导与团队建设',en:'Mentorship and research leadership'},
     studentsHeading:{zh:'学生',en:'Students'},studentsNote:{zh:'成员姓名、照片及入学年份待补充。',en:'Names, photos and enrollment years will be added.'},
     doctoralHeading:{zh:'博士研究生',en:'Doctoral Students'},mastersHeading:{zh:'硕士研究生',en:'Master’s Students'},
     doctoralRole:{zh:'博士生',en:'PhD student'},mastersRole:{zh:'硕士生',en:'Master’s student'},
@@ -63,8 +63,12 @@ window.SITE_DATA = {
     profileUrl:'https://see.tongji.edu.cn/info/1376/10290.htm'
   },
   faculty:[
-    {id:'faculty-01',name:{zh:'导师姓名',en:'Faculty name'},englishName:'Name to be added',role:{zh:'课题组负责人',en:'Group lead'},photo:'assets/photos/faculty-01.png',photoPlaceholder:true,bio:{zh:'关注自动驾驶与具身智能。个人简介、教育背景与代表性成果待补充。',en:'Autonomous driving and embodied intelligence. Biography, education and selected work to be added.'}},
-    {id:'faculty-02',name:{zh:'导师姓名',en:'Faculty name'},englishName:'Name to be added',role:{zh:'导师 / 合作导师（待补充）',en:'Faculty / Co-supervisor (to be added)'},photo:'assets/photos/faculty-02.png',photoPlaceholder:true,bio:{zh:'研究方向、个人简介与联系方式待补充。',en:'Research interests, biography and contact details to be added.'}}
+    {id:'faculty-01',name:{zh:'张元建 教授',en:'Prof. Yuanjian Zhang'},englishName:'Yuanjian Zhang',
+      role:{zh:'同济大学教授 · 课题组负责人',en:'Professor, Tongji University · Principal Investigator'},
+      photo:'assets/photos/faculty-01.png',photoPlaceholder:true,
+      bio:{zh:'研究方向为无人自主系统。课题组聚焦自动驾驶与具身智能，探索智能体对环境的理解、决策与行动。',en:'His research focuses on unmanned autonomous systems. The group explores autonomous driving and embodied intelligence, connecting environmental understanding with decision-making and action.'},
+      profileLabel:{zh:'同济大学官方介绍 ↗',en:'Official Tongji University profile ↗'},
+      profileUrl:'https://cdhk.tongji.edu.cn/cd/e7/c38347a380391/page.htm'}
   ],
   students:[
     {id:'student-01',name:{zh:'学生姓名 01',en:'Student name 01'},degree:'phd',enrollmentYear:'',email:'',website:'',scholar:'',photo:'assets/photos/student-01.png',photoPlaceholder:true,interest:{zh:'研究主题待补充',en:'Research topic to be added'}},

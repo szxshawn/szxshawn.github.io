@@ -50,20 +50,18 @@
       const bottom = el('div','research-bottom'); bottom.append(el('div','research-question',translate(item.question))); card.append(bottom); container.append(card);
     });
   }
-  function renderPeople() {
-    const person = data.advisor;
-    const advisor = el('article', 'advisor-card'); const info = el('div','advisor-info');
+  function profileCard(person) {
+    const card = el('article', 'profile-card'); const info = el('div','profile-info');
     if (translate(person.badge)) info.append(el('span','draft-tag',translate(person.badge)));
     info.append(el('h4','',translate(person.name)),el('span','person-name-en',person.englishName),el('p','person-role',translate(person.role)),el('p','person-bio',translate(person.bio)));
     if (person.profileUrl) info.append(external(person.profileUrl,translate(person.profileLabel),'text-link profile-link'));
     if (translate(person.note)) info.append(el('p','advisor-note',translate(person.note)));
-    advisor.append(portrait(person),info); document.getElementById('advisor-list').replaceChildren(advisor);
-    const faculty = document.getElementById('faculty-list'); faculty.replaceChildren();
-    data.faculty.forEach(person => {
-      const card=el('article','faculty-card'); const info=el('div','faculty-info');
-      info.append(el('h4','',translate(person.name)),el('span','person-name-en',person.englishName),el('p','person-role',translate(person.role)),el('p','person-bio',translate(person.bio)));
-      card.append(portrait(person),info);faculty.append(card);
-    });
+    card.append(portrait(person),info);
+    return card;
+  }
+  function renderPeople() {
+    document.getElementById('faculty-list').replaceChildren(...data.faculty.map(profileCard));
+    document.getElementById('advisor-list').replaceChildren(profileCard(data.advisor));
     const students = document.getElementById('student-list'); students.replaceChildren();
     ['phd','masters'].forEach(degree => {
       const members=data.students.filter(person=>person.degree===degree);
