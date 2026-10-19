@@ -27,12 +27,12 @@ window.SITE_DATA = {
     peopleIntro:{zh:'跨越算法与系统，在交流、协作与实践中推进研究。',en:'Advancing research across algorithms and systems through dialogue, collaboration and practice.'},
     advisorHeading:{zh:'首席学术顾问',en:'Chief Academic Advisor'},advisorSubheading:{zh:'学术视野与研究引领',en:'Perspective and academic guidance'},
     facultyHeading:{zh:'导师（课题组负责人）',en:'Principal Investigator'},facultySubheading:{zh:'研究指导与团队建设',en:'Mentorship and research leadership'},
-    studentsHeading:{zh:'博士后与研究生',en:'Postdocs & Graduate Students'},studentsNote:{zh:'点击分组展开或收起成员名单。',en:'Select a group to expand or collapse its member list.'},
-    postdocsHeading:{zh:'博士后',en:'Postdoctoral Researchers'},doctoralHeading:{zh:'博士研究生',en:'Doctoral Students'},mastersHeading:{zh:'硕士研究生',en:'Master’s Students'},
-    postdocRole:{zh:'博士后',en:'Postdoctoral researcher'},doctoralRole:{zh:'博士生',en:'PhD student'},mastersRole:{zh:'硕士生',en:'Master’s student'},
+    mentorsHeading:{zh:'指导老师',en:'Research Mentors'},mentorsSubheading:{zh:'科研指导与学术交流',en:'Research mentorship and academic exchange'},
+    studentsHeading:{zh:'研究生',en:'Graduate Students'},studentsNote:{zh:'点击分组展开或收起成员名单。',en:'Select a group to expand or collapse its member list.'},
+    doctoralHeading:{zh:'博士研究生',en:'Doctoral Students'},mastersHeading:{zh:'硕士研究生',en:'Master’s Students'},
+    doctoralRole:{zh:'博士生',en:'PhD student'},mastersRole:{zh:'硕士生',en:'Master’s student'},
     expandGroup:{zh:'展开',en:'Expand'},collapseGroup:{zh:'收起',en:'Collapse'},memberDetailsPending:{zh:'资料待补充',en:'Details to be added'},
-    postdocDetailsPending:{zh:'博士后资料待补充',en:'Postdoctoral profiles coming soon'},postdocDetailsNote:{zh:'成员姓名、照片与研究方向将在这里展示。',en:'Names, portraits and research interests will appear here.'},
-    studentCohort:{zh:'{year} 级',en:'Enrolled {year}'},studentYearPending:{zh:'入学年份待补充',en:'Enrollment year to be added'},postdocStartYear:{zh:'{year} 年入站',en:'Joined {year}'},postdocYearPending:{zh:'入站年份待补充',en:'Start year to be added'},
+    studentCohort:{zh:'{year} 级',en:'Enrolled {year}'},studentYearPending:{zh:'入学年份待补充',en:'Enrollment year to be added'},
     studentEmail:{zh:'邮箱',en:'Email'},studentWebsite:{zh:'个人主页',en:'Personal website'},studentScholar:{zh:'学术主页',en:'Scholar profile'},
     photoPlaceholder:{zh:'照片待补充',en:'Photo to be added'},portraitAlt:{zh:'{name}的照片',en:'Portrait of {name}'},
     publicationsEyebrow:{zh:'04 / 研究成果',en:'04 / Publications'},publicationsTitle:{zh:'让研究留下清晰的足迹。',en:'Ideas, experiments and open knowledge.'},
@@ -73,8 +73,13 @@ window.SITE_DATA = {
       profileLabel:{zh:'同济大学官方介绍 ↗',en:'Official Tongji University profile ↗'},
       profileUrl:'https://cdhk.tongji.edu.cn/cd/e7/c38347a380391/page.htm'}
   ],
-  // Add confirmed postdoctoral profiles here; an empty list keeps the reserved section visible.
-  postdocs:[],
+  // Postdoctoral profiles appear as individual cards under Research Mentors.
+  postdocs:[{
+    id:'postdoc-01',name:{zh:'姓名待补充',en:'Name to be added'},englishName:'',degree:'postdoc',
+    role:{zh:'博士后',en:'Postdoctoral researcher'},
+    photo:'assets/photos/postdoc-01.png',photoPlaceholder:true,
+    bio:{zh:'个人简介与研究方向待补充。',en:'Biography and research interests to be added.'}
+  }],
   // Reserved profiles: 10 doctoral students and 16 masters students, each in one unified group.
   students:[
     {"id":"phd-01","name":{"zh":"博士生姓名 01","en":"PhD student 01"},"degree":"phd","enrollmentYear":"","email":"","website":"","scholar":"","photo":"assets/photos/phd-01.png","photoPlaceholder":true,"interest":{"zh":"研究主题待补充","en":"Research topic to be added"}},

@@ -52,7 +52,9 @@
   function profileCard(person) {
     const card = el('article', 'profile-card'); const info = el('div','profile-info');
     if (translate(person.badge)) info.append(el('span','draft-tag',translate(person.badge)));
-    info.append(el('h4','',translate(person.name)),el('span','person-name-en',person.englishName),el('p','person-role',translate(person.role)),el('p','person-bio',translate(person.bio)));
+    info.append(el('h4','',translate(person.name)));
+    if (person.englishName) info.append(el('span','person-name-en',person.englishName));
+    info.append(el('p','person-role',translate(person.role)),el('p','person-bio',translate(person.bio)));
     if (person.profileUrl) info.append(external(person.profileUrl,translate(person.profileLabel),'text-link profile-link'));
     if (translate(person.note)) info.append(el('p','advisor-note',translate(person.note)));
     card.append(portrait(person),info);
@@ -61,6 +63,9 @@
   function renderPeople() {
     document.getElementById('faculty-list').replaceChildren(...data.faculty.map(profileCard));
     document.getElementById('advisor-list').replaceChildren(profileCard(data.advisor));
+    document.getElementById('mentor-list').replaceChildren(...data.postdocs.map(person=>{
+      const card=profileCard(person);card.classList.add('mentor-card');return card;
+    }));
     renderMemberGroups();
   }
   function renderMemberGroups() {
@@ -68,7 +73,6 @@
     const expanded=new Set([...container.querySelectorAll('details[open]')].map(group=>group.dataset.degree));
     container.replaceChildren();
     const groups=[
-      {key:'postdoc',heading:'postdocsHeading',members:data.postdocs},
       {key:'phd',heading:'doctoralHeading',members:data.students.filter(person=>person.degree==='phd')},
       {key:'masters',heading:'mastersHeading',members:data.students.filter(person=>person.degree==='masters')}
     ];
@@ -84,8 +88,7 @@
       summary.append(copy,action);group.append(summary);
       const body=el('div','member-group-body');
       if(!members.length){
-        const empty=el('div','member-empty'),photo=el('img');photo.src='assets/photos/postdoc-01.png';photo.width=80;photo.height=80;photo.alt='';photo.loading='lazy';
-        const message=el('div');message.append(el('h5','',t(key==='postdoc'?'postdocDetailsPending':'memberDetailsPending')),el('p','',t('postdocDetailsNote')));empty.append(photo,message);body.append(empty);
+        body.append(el('p','member-empty',t('memberDetailsPending')));
       }else{
         body.append(memberGrid(members,key));
       }
@@ -97,9 +100,9 @@
     members.forEach(person=>{
       const card=el('article','student-card');
       const meta=el('div','student-meta');
-      const role=t(degree==='postdoc'?'postdocRole':degree==='phd'?'doctoralRole':'mastersRole');
+      const role=t(degree==='phd'?'doctoralRole':'mastersRole');
       meta.append(el('h5','student-name',translate(person.name)),el('p','student-degree',role));
-      const year=person.enrollmentYear ? t(degree==='postdoc'?'postdocStartYear':'studentCohort').replace('{year}',String(person.enrollmentYear)) : t(degree==='postdoc'?'postdocYearPending':'studentYearPending');
+      const year=person.enrollmentYear ? t('studentCohort').replace('{year}',String(person.enrollmentYear)) : t('studentYearPending');
       meta.append(el('p','student-year',year));
       if(translate(person.interest))meta.append(el('p','student-interest',translate(person.interest)));
       card.append(portrait(person),meta);

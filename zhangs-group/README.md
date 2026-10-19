@@ -12,7 +12,7 @@
 | --- | --- |
 | 张元建教授（课题组负责人） | `faculty-01.png` |
 | 首席学术顾问 | `advisor.png` |
-| 博士后（预留） | `postdoc-01.png` |
+| 指导老师（博士后，预留） | `postdoc-01.png` |
 | 博士生 01—10 | `phd-01.png` 至 `phd-10.png` |
 | 硕士生 01—16 | `masters-01.png` 至 `masters-16.png` |
 
@@ -24,7 +24,7 @@
 
 - `advisor`：顾问；陈虹教授资料参考[同济大学官方主页](https://see.tongji.edu.cn/info/1376/10290.htm)，任职关系待确认。
 - `faculty`：课题组负责人，目前仅张元建教授，位于顾问上方。简介参考[同济大学官方介绍](https://cdhk.tongji.edu.cn/cd/e7/c38347a380391/page.htm)。
-- `postdocs`：博士后资料，目前留空。
+- `postdocs`：指导老师栏目中的博士后人物名片，已预留一张照片与姓名占位卡。
 - `students`：研究生，数组可增删；`degree` 为 `phd` 或 `masters`。
 - `research`：研究方向正文。
 - `ui`：首页与其他栏目文案。
@@ -37,11 +37,11 @@
 
 English: replace same-name PNGs in `assets/photos/`, and edit both `zh` and `en` copy in `content/site-data.js`. This directory is the live publishing source. The private source backup does not sync automatically.
 
-## 博士后与研究生资料
+## 指导老师与研究生资料
 
-三个分组按“博士后 → 博士研究生 → 硕士研究生”排列，默认全部收起；点击分组标题即可独立展开或收起，支持键盘操作。中英文切换保留当前展开状态。
+“指导老师”位于首席学术顾问下方，以独立人物名片展示，身份标注“博士后”。下方的研究生分为“博士研究生”和“硕士研究生”两个分组，默认全部收起；点击分组标题即可独立展开或收起，支持键盘操作。中英文切换保留当前展开状态。
 
-- `postdocs`：博士后资料数组，目前留空，仍显示分组与照片预留位置；有真实资料后加入人物记录即可，示例见私有源码仓库 `szxshawn/zhangs-group` 中的 `materials/team/postdoc-example.json`。
+- `postdocs`：指导老师的博士后名片数组。编辑 `name`（中英文姓名）、`role`（身份）、`bio`（简介）、`photo`（照片路径）；`englishName` 可选填姓名拼音。已预留一张名片，也可继续添加。示例见私有源码仓库 `szxshawn/zhangs-group` 中的 `materials/team/postdoc-example.json`。
 - 博士生：统一预留 10 个位置，`phd-01` 至 `phd-10`。
 - 硕士生：统一预留 16 个位置，`masters-01` 至 `masters-16`。
 
@@ -49,7 +49,7 @@ English: replace same-name PNGs in `assets/photos/`, and edit both `zh` and `en`
 
 照片现在按分组编号：`phd-01.png` 至 `phd-10.png`、`masters-01.png` 至 `masters-16.png`，博士后预留 `postdoc-01.png`。早期 `student-01.png` 至 `student-06.png` 仍保留作备份，当前页面使用上述新文件名。请上传同名 PNG 以替换照片。
 
-每位成员可填写以下字段，中文写在 `zh`、英文写在 `en`：
+每位研究生可填写以下字段，中文写在 `zh`、英文写在 `en`：
 
 ```js
 enrollmentYear: '',
@@ -58,7 +58,7 @@ website: '',
 scholar: ''
 ```
 
-年份留空时显示待补充；博士后的 `enrollmentYear` 表示入站年份。链接留空时不显示图标，填入有效地址后自动出现对应入口。`interest` 为中英文研究主题，可留空隐藏。圆形头像保留，建议人脸位于照片中心偏上位置。
+入学年份留空时显示待补充。链接留空时不显示图标，填入有效地址后自动出现对应入口。`interest` 为中英文研究主题，可留空隐藏。研究生使用圆形头像，建议人脸位于照片中心偏上位置；指导老师名片使用竖版照片。
 
 卡片布局参考 [PRLab 学生页面](https://prlab-nju.com/nju/people/) 的圆形头像和居中信息结构；未使用对方的人员资料或照片。
 
