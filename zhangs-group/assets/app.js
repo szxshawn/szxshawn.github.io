@@ -143,6 +143,23 @@
       body.append(links);article.append(el('span','publication-year',String(publication.year)),body);target.append(article);
     });
   }
+  const motionButton=document.querySelector('.motion-toggle');
+  const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
+  let motionPaused=false;
+  try{motionPaused=localStorage.getItem('zhangs-group-motion')==='paused';}catch{}
+  function renderMotion(){
+    document.body.dataset.motion=motionPaused||reducedMotion.matches||document.hidden?'paused':'running';
+    motionButton.querySelector('.motion-label').textContent=t(motionPaused?'playMotion':'pauseMotion');
+    motionButton.setAttribute('aria-label',t(motionPaused?'playMotionLabel':'pauseMotionLabel'));
+    motionButton.dataset.paused=String(motionPaused);
+  }
+  motionButton.addEventListener('click',()=>{
+    motionPaused=!motionPaused;
+    try{localStorage.setItem('zhangs-group-motion',motionPaused?'paused':'running');}catch{}
+    renderMotion();
+  });
+  reducedMotion.addEventListener('change',renderMotion);
+  document.addEventListener('visibilitychange',renderMotion);
   const menu=document.querySelector('.menu-toggle');const nav=document.getElementById('navigation');
   function closeMenu(){menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label',t('openMenu'));nav.classList.remove('is-open');}
   function render() {
@@ -153,7 +170,7 @@
     document.querySelectorAll('[data-i18n-aria]').forEach(node=>node.setAttribute('aria-label',t(node.dataset.i18nAria)));
     document.querySelectorAll('[data-i18n-alt]').forEach(node=>node.alt=t(node.dataset.i18nAlt));
     document.querySelectorAll('[data-lang]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.lang===language)));
-    renderResearch();renderPeople();renderPublications();
+    renderResearch();renderPeople();renderPublications();renderMotion();
     const email=document.getElementById('contact-email');
     if(data.contactEmail && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.contactEmail)){
       const link=el('a','contact-email',data.contactEmail);link.href=`mailto:${data.contactEmail}`;email.replaceChildren(link);document.querySelector('.contact-note').hidden=true;

@@ -1,0 +1,40 @@
+/* Tongji-blue spacetime atmosphere. Decorative layers never intercept input. */
+:root{--blue:#94caff;--blue-dark:#b2dcff;--ink:#eaf3ff;--muted:#b2c3d8;--line:rgba(145,185,228,.22);--paper:#081426;--soft:rgba(8,22,44,.62)}
+body{isolation:isolate;background:#081426}
+::selection{background:#285d92;color:#fff}
+.spacetime-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;background:radial-gradient(ellipse at 74% 42%,rgba(50,118,175,.32),transparent 43%),radial-gradient(ellipse at 4% 90%,rgba(38,65,141,.3),transparent 58%),linear-gradient(125deg,#07101f,#0a1b32 58%,#0c223c)}
+.spacetime-mesh{position:absolute;inset:-8%;background:url('spacetime-grid.svg') center/cover no-repeat;opacity:.8}
+.spacetime-rings{position:absolute;left:74%;top:42%;width:48vmax;height:30vmax;transform:translate(-50%,-50%) rotate(-23deg)}
+.spacetime-rings i{position:absolute;inset:0;border:1px solid rgba(124,205,255,.64);border-radius:50%;box-shadow:0 0 22px rgba(66,157,232,.1),inset 0 0 18px rgba(66,157,232,.07);animation:spacetime-travel 30s linear infinite;will-change:transform,opacity}
+.spacetime-rings i:nth-child(2){animation-delay:-5s}.spacetime-rings i:nth-child(3){animation-delay:-10s}.spacetime-rings i:nth-child(4){animation-delay:-15s}.spacetime-rings i:nth-child(5){animation-delay:-20s}.spacetime-rings i:nth-child(6){animation-delay:-25s}
+.spacetime-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,15,31,.62),rgba(5,15,31,.12) 62%,rgba(5,15,31,.08)),linear-gradient(0deg,rgba(5,15,31,.4),transparent 45%)}
+@keyframes spacetime-travel{0%{transform:scale(.12);opacity:0}12%{opacity:.22}62%{opacity:.32}100%{transform:scale(3.8);opacity:0}}
+body[data-motion=paused] .spacetime-rings i{animation-play-state:paused}
+.site-header{background:rgba(6,17,34,.88);border-color:var(--line);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.brand-mark{background:#214b7c;border:1px solid #689aca;box-shadow:0 0 20px rgba(75,152,232,.13)}
+.nav a,.language-switch button{color:#b5c7dc}.nav a:hover{color:#fff}.language-switch{color:#6e8eae}
+.hero{padding-block:88px 82px}.hero h1{color:#f1f7ff;text-shadow:0 3px 28px rgba(0,0,0,.2)}
+.hero h1 .blue{color:#a5d5ff}.hero .dot{box-shadow:0 0 12px #63b7ff}
+.hero-description{color:#b8cce2}.hero-caption{color:#93afcc}.hero-photo{background:#10243c;box-shadow:0 18px 70px rgba(0,7,20,.25);border:1px solid rgba(157,196,232,.24)}
+.hero-photo figcaption{background:rgba(12,30,52,.96);border-bottom:0;color:#bfdbf4}
+.button.primary{background:#2464a7;border:1px solid #5c9bd4;color:#fff;box-shadow:0 6px 28px rgba(17,84,153,.24)}.button.primary:hover{background:#3278bc}
+.section-number,.about-keywords span:before{color:#8aaed2}
+.research-section,.publications-section{background:rgba(7,20,39,.56);border-color:var(--line)}
+.research-card,.profile-card{background:linear-gradient(125deg,rgba(19,42,68,.94),rgba(10,27,48,.9));border-color:var(--line);box-shadow:0 16px 48px rgba(0,6,18,.12)}
+.research-card .research-en{color:#9ebad7}.research-index{color:#769fc9}.research-tags li{color:#adcceb;border-color:rgba(128,179,225,.27);background:rgba(61,116,168,.08)}
+.research-icon,.empty-icon{filter:brightness(1.65)}
+.subsection-heading>span,.subsection-note,.person-name-en,.advisor-note,.contact-label,.footer-inner>p{color:#a2b8d0}
+.advisor-note,.empty-publications{border-color:var(--line)}.draft-tag{color:#bbd6ef;background:rgba(99,159,215,.17);border:1px solid rgba(128,179,225,.16)}
+.portrait{background:#c9d8e6}.profile-card .portrait{box-shadow:0 0 0 1px rgba(193,219,243,.22)}
+.student-group{background:rgba(9,26,47,.94);border-color:var(--line)}
+.member-group-summary{background:rgba(23,48,77,.88)}.member-group-summary:hover{background:rgba(34,65,100,.92)}
+.member-group-count{background:rgba(121,180,235,.17);color:#c1e0ff}.member-group-meta{color:#a2b8d0}
+.student-card{background:rgba(24,48,77,.85);border-color:rgba(130,178,224,.17)}.student-card:hover{background:rgba(35,66,102,.92);border-color:#668caf}
+.student-degree{color:#c0d1e4}.student-year,.student-interest{color:#9fb6d0}.student-profile-link img{filter:brightness(1.9)}.student-profile-link:hover{background:#35567b}
+.site-footer{background:rgba(6,17,34,.65)}.noscript{background:#1c3652;color:#d8eaff}
+.motion-toggle{position:fixed;right:22px;bottom:22px;z-index:25;display:inline-flex;align-items:center;gap:9px;min-height:40px;padding:9px 14px;border:1px solid rgba(151,194,235,.3);border-radius:22px;background:rgba(8,24,44,.9);color:#bed5ec;font-size:10px;letter-spacing:.4px;box-shadow:0 4px 20px rgba(0,8,22,.2);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.motion-toggle:hover{background:#183a60;color:white}.motion-icon{width:8px;height:10px;border-inline:2px solid currentColor;flex-shrink:0}.motion-toggle[data-paused=true] .motion-icon{width:8px;height:10px;border:0;border-left:8px solid currentColor;border-top:5px solid transparent;border-bottom:5px solid transparent}
+@media(max-width:900px){.nav{background:rgba(7,21,41,.98)}.hero{padding-block:60px}}
+@media(max-width:620px){.hero{padding-block:48px 44px}.spacetime-mesh{opacity:.48;background-position:66% center}.spacetime-rings{left:92%;top:35%;opacity:.6}.spacetime-shade{background:rgba(5,15,31,.2)}.motion-toggle{right:14px;bottom:14px;min-height:38px;padding:8px 12px;font-size:9px}.footer-inner{padding-bottom:72px}}
+@media(prefers-reduced-motion:reduce){.spacetime-rings i{animation:none;will-change:auto}.spacetime-rings i:nth-child(2){transform:scale(.55);opacity:.14}.spacetime-rings i:nth-child(3){transform:scale(1.5);opacity:.14}.spacetime-rings i:nth-child(n+4){display:none}.motion-toggle{display:none}}
+@media print{.spacetime-bg,.motion-toggle{display:none}:root{--ink:#182737;--muted:#586674;--blue:#153f79;--line:#ccd5df}body,.site-header,.site-footer,.research-section,.publications-section,.research-card,.profile-card,.student-group,.member-group-summary,.student-card{background:#fff!important;color:#182737!important;box-shadow:none}.hero h1,.hero h1 .blue{color:#153f79;text-shadow:none}}

@@ -66,3 +66,8 @@ scholar: ''
 ## 首页配图
 
 首页使用实景照片，来源为 Kindel Media 和 Pavel Danilyuk / Pexels，仅作为研究方向的主题配图。摄影来源与许可见 `assets/photo-sources.json`。后续可替换 `assets/photos/research-electric-vehicle.jpg` 和 `assets/photos/research-robotics.jpg`；同名上传即可，页面自动适配裁切。
+
+
+## 时空背景
+
+深蓝色背景由 `assets/spacetime.css` 与 `assets/spacetime-grid.svg` 控制，使用透视隧道线条与缓慢扩散的光环。右下角可暂停或开启动效，浏览器会记住选择；系统开启“减少动态效果”时自动显示静态背景，页面切到后台时动画暂停。手机端会降低背景强度。正文、人物照片和资料结构不受影响。

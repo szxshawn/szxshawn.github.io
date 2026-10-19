@@ -35,6 +35,7 @@ window.SITE_DATA = {
     studentCohort:{zh:'{year} 级',en:'Enrolled {year}'},studentYearPending:{zh:'入学年份待补充',en:'Enrollment year to be added'},
     studentEmail:{zh:'邮箱',en:'Email'},studentWebsite:{zh:'个人主页',en:'Personal website'},studentScholar:{zh:'学术主页',en:'Scholar profile'},
     photoPlaceholder:{zh:'照片待补充',en:'Photo to be added'},portraitAlt:{zh:'{name}的照片',en:'Portrait of {name}'},
+    pauseMotion:{zh:'暂停动效',en:'Pause motion'},playMotion:{zh:'开启动效',en:'Play motion'},pauseMotionLabel:{zh:'暂停背景动效',en:'Pause background motion'},playMotionLabel:{zh:'开启背景动效',en:'Play background motion'},
     publicationsEyebrow:{zh:'04 / 研究成果',en:'04 / Publications'},publicationsTitle:{zh:'让研究留下清晰的足迹。',en:'Ideas, experiments and open knowledge.'},
     publicationsIntro:{zh:'论文、开源项目与系统演示将在这里持续更新。',en:'A growing record of publications, open-source projects and system demonstrations.'},
     publicationsEmptyTitle:{zh:'研究成果整理中',en:'Publications will be added soon'},publicationsEmptyText:{zh:'我们将在这里分享论文、代码与项目进展。',en:'This space will feature our papers, code and project updates.'},
