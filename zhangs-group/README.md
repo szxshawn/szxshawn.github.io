@@ -65,7 +65,7 @@ scholar: ''
 
 ## 首页配图
 
-首页使用一张定制生成的研究场景示意图：搭载感知传感器的智能电动车辆，与带视觉相机的移动机械臂。图片采用自然光和中性灰蓝色调，用于表达“智能电动车辆 × 具身智能”，并非课题组实验室或设备的实拍。页面使用 `assets/photos/research-lab-concept.jpg`，完整显示 4:3 画面；同名上传可替换，推荐保持相同比例。生成工具与完整提示词见 `assets/generated-image.json`。旧 Pexels 图片仅作备份，来源保留在 `assets/photo-sources.json`。
+首页使用定制生成的蓝灰色等距科研插画，以智能电动车辆、感知范围、规划轨迹和抓取任务中的机械臂表达“智能电动车辆 × 具身智能”。图中没有文字、编号或角标。页面使用 `assets/photos/research-isometric-illustration.jpg`，完整显示 4:3 画面；同名上传可替换，推荐保持相同比例。生成工具与完整提示词见 `assets/generated-image.json`。先前的写实生成图仅作备份，其提示词保留在 `assets/generated-lab-photo.json`；旧 Pexels 图片来源保留在 `assets/photo-sources.json`。
 
 
 ## 时空背景
